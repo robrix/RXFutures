@@ -1,0 +1,406 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D4FCDC2A14819D4100EB9EF7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FCDC2914819D4100EB9EF7 /* Cocoa.framework */; };
+		D4FCDC3414819D4100EB9EF7 /* RXFutures.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FCDC3314819D4100EB9EF7 /* RXFutures.m */; };
+		D4FCDC3C14819D4100EB9EF7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FCDC3B14819D4100EB9EF7 /* SenTestingKit.framework */; };
+		D4FCDC3D14819D4100EB9EF7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FCDC2914819D4100EB9EF7 /* Cocoa.framework */; };
+		D4FCDC4014819D4100EB9EF7 /* libRXFutures.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FCDC2614819D4100EB9EF7 /* libRXFutures.a */; };
+		D4FCDC4614819D4100EB9EF7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4FCDC4414819D4100EB9EF7 /* InfoPlist.strings */; };
+		D4FCDC4914819D4100EB9EF7 /* RXFuturesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FCDC4814819D4100EB9EF7 /* RXFuturesTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D4FCDC3E14819D4100EB9EF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4FCDC1D14819D4100EB9EF7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4FCDC2514819D4100EB9EF7;
+			remoteInfo = RXFutures;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D4FCDC2614819D4100EB9EF7 /* libRXFutures.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRXFutures.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4FCDC2914819D4100EB9EF7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D4FCDC2C14819D4100EB9EF7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		D4FCDC2D14819D4100EB9EF7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D4FCDC2E14819D4100EB9EF7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D4FCDC3114819D4100EB9EF7 /* RXFutures-Prefix.pch */ = {isa = PBXFileReference; path = "RXFutures-Prefix.pch"; sourceTree = "<group>"; };
+		D4FCDC3214819D4100EB9EF7 /* RXFutures.h */ = {isa = PBXFileReference; path = RXFutures.h; sourceTree = "<group>"; };
+		D4FCDC3314819D4100EB9EF7 /* RXFutures.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RXFutures.m; sourceTree = "<group>"; };
+		D4FCDC3A14819D4100EB9EF7 /* RXFuturesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RXFuturesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4FCDC3B14819D4100EB9EF7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		D4FCDC4314819D4100EB9EF7 /* RXFuturesTests-Info.plist */ = {isa = PBXFileReference; path = "RXFuturesTests-Info.plist"; sourceTree = "<group>"; };
+		D4FCDC4514819D4100EB9EF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D4FCDC4714819D4100EB9EF7 /* RXFuturesTests.h */ = {isa = PBXFileReference; path = RXFuturesTests.h; sourceTree = "<group>"; };
+		D4FCDC4814819D4100EB9EF7 /* RXFuturesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RXFuturesTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D4FCDC2314819D4100EB9EF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4FCDC2A14819D4100EB9EF7 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4FCDC3614819D4100EB9EF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4FCDC3C14819D4100EB9EF7 /* SenTestingKit.framework in Frameworks */,
+				D4FCDC3D14819D4100EB9EF7 /* Cocoa.framework in Frameworks */,
+				D4FCDC4014819D4100EB9EF7 /* libRXFutures.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D4FCDC1B14819D4100EB9EF7 = {
+			isa = PBXGroup;
+			children = (
+				D4FCDC2F14819D4100EB9EF7 /* RXFutures */,
+				D4FCDC4114819D4100EB9EF7 /* RXFuturesTests */,
+				D4FCDC2814819D4100EB9EF7 /* Frameworks */,
+				D4FCDC2714819D4100EB9EF7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D4FCDC2714819D4100EB9EF7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D4FCDC2614819D4100EB9EF7 /* libRXFutures.a */,
+				D4FCDC3A14819D4100EB9EF7 /* RXFuturesTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D4FCDC2814819D4100EB9EF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4FCDC2914819D4100EB9EF7 /* Cocoa.framework */,
+				D4FCDC3B14819D4100EB9EF7 /* SenTestingKit.framework */,
+				D4FCDC2B14819D4100EB9EF7 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D4FCDC2B14819D4100EB9EF7 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4FCDC2C14819D4100EB9EF7 /* AppKit.framework */,
+				D4FCDC2D14819D4100EB9EF7 /* CoreData.framework */,
+				D4FCDC2E14819D4100EB9EF7 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		D4FCDC2F14819D4100EB9EF7 /* RXFutures */ = {
+			isa = PBXGroup;
+			children = (
+				D4FCDC3214819D4100EB9EF7 /* RXFutures.h */,
+				D4FCDC3314819D4100EB9EF7 /* RXFutures.m */,
+				D4FCDC3014819D4100EB9EF7 /* Supporting Files */,
+			);
+			path = RXFutures;
+			sourceTree = "<group>";
+		};
+		D4FCDC3014819D4100EB9EF7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4FCDC3114819D4100EB9EF7 /* RXFutures-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D4FCDC4114819D4100EB9EF7 /* RXFuturesTests */ = {
+			isa = PBXGroup;
+			children = (
+				D4FCDC4714819D4100EB9EF7 /* RXFuturesTests.h */,
+				D4FCDC4814819D4100EB9EF7 /* RXFuturesTests.m */,
+				D4FCDC4214819D4100EB9EF7 /* Supporting Files */,
+			);
+			path = RXFuturesTests;
+			sourceTree = "<group>";
+		};
+		D4FCDC4214819D4100EB9EF7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4FCDC4314819D4100EB9EF7 /* RXFuturesTests-Info.plist */,
+				D4FCDC4414819D4100EB9EF7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D4FCDC2414819D4100EB9EF7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D4FCDC2514819D4100EB9EF7 /* RXFutures */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4FCDC4C14819D4100EB9EF7 /* Build configuration list for PBXNativeTarget "RXFutures" */;
+			buildPhases = (
+				D4FCDC2214819D4100EB9EF7 /* Sources */,
+				D4FCDC2314819D4100EB9EF7 /* Frameworks */,
+				D4FCDC2414819D4100EB9EF7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RXFutures;
+			productName = RXFutures;
+			productReference = D4FCDC2614819D4100EB9EF7 /* libRXFutures.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D4FCDC3914819D4100EB9EF7 /* RXFuturesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4FCDC4F14819D4100EB9EF7 /* Build configuration list for PBXNativeTarget "RXFuturesTests" */;
+			buildPhases = (
+				D4FCDC3514819D4100EB9EF7 /* Sources */,
+				D4FCDC3614819D4100EB9EF7 /* Frameworks */,
+				D4FCDC3714819D4100EB9EF7 /* Resources */,
+				D4FCDC3814819D4100EB9EF7 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4FCDC3F14819D4100EB9EF7 /* PBXTargetDependency */,
+			);
+			name = RXFuturesTests;
+			productName = RXFuturesTests;
+			productReference = D4FCDC3A14819D4100EB9EF7 /* RXFuturesTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D4FCDC1D14819D4100EB9EF7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Monochrome Industries";
+			};
+			buildConfigurationList = D4FCDC2014819D4100EB9EF7 /* Build configuration list for PBXProject "RXFutures" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D4FCDC1B14819D4100EB9EF7;
+			productRefGroup = D4FCDC2714819D4100EB9EF7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D4FCDC2514819D4100EB9EF7 /* RXFutures */,
+				D4FCDC3914819D4100EB9EF7 /* RXFuturesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D4FCDC3714819D4100EB9EF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4FCDC4614819D4100EB9EF7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D4FCDC3814819D4100EB9EF7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D4FCDC2214819D4100EB9EF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4FCDC3414819D4100EB9EF7 /* RXFutures.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4FCDC3514819D4100EB9EF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4FCDC4914819D4100EB9EF7 /* RXFuturesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D4FCDC3F14819D4100EB9EF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4FCDC2514819D4100EB9EF7 /* RXFutures */;
+			targetProxy = D4FCDC3E14819D4100EB9EF7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D4FCDC4414819D4100EB9EF7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4FCDC4514819D4100EB9EF7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D4FCDC4A14819D4100EB9EF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D4FCDC4B14819D4100EB9EF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D4FCDC4D14819D4100EB9EF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RXFutures/RXFutures-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D4FCDC4E14819D4100EB9EF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RXFutures/RXFutures-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D4FCDC5014819D4100EB9EF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RXFutures/RXFutures-Prefix.pch";
+				INFOPLIST_FILE = "RXFuturesTests/RXFuturesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D4FCDC5114819D4100EB9EF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RXFutures/RXFutures-Prefix.pch";
+				INFOPLIST_FILE = "RXFuturesTests/RXFuturesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D4FCDC2014819D4100EB9EF7 /* Build configuration list for PBXProject "RXFutures" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4FCDC4A14819D4100EB9EF7 /* Debug */,
+				D4FCDC4B14819D4100EB9EF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4FCDC4C14819D4100EB9EF7 /* Build configuration list for PBXNativeTarget "RXFutures" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4FCDC4D14819D4100EB9EF7 /* Debug */,
+				D4FCDC4E14819D4100EB9EF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D4FCDC4F14819D4100EB9EF7 /* Build configuration list for PBXNativeTarget "RXFuturesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4FCDC5014819D4100EB9EF7 /* Debug */,
+				D4FCDC5114819D4100EB9EF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D4FCDC1D14819D4100EB9EF7 /* Project object */;
+}

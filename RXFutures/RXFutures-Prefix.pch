@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'RXFutures' target in the 'RXFutures' project
+//
+
+#ifdef __OBJC__
+	#import <Cocoa/Cocoa.h>
+#endif
