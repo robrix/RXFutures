@@ -10,6 +10,33 @@ static NSMutableDictionary *RXAssertionHelperDescriptionFunctions = nil;
 
 static double RXAssertionHelperFloatingPointComparisonAccuracy = 0.0;
 
+BOOL RXAssertionHelperInt8Comparison(const void *a, const void *b);
+BOOL RXAssertionHelperInt16Comparison(const void *a, const void *b);
+BOOL RXAssertionHelperInt32Comparison(const void *a, const void *b);
+BOOL RXAssertionHelperInt64Comparison(const void *a, const void *b);
+BOOL RXAssertionHelperFloatComparison(const void *a, const void *b);
+BOOL RXAssertionHelperDoubleComparison(const void *a, const void *b);
+BOOL RXAssertionHelperObjectComparison(const void *a, const void *b);
+BOOL RXAssertionHelperCFTypeRefComparison(const void *a, const void *b);
+BOOL RXAssertionHelperNSPointComparison(const void *a, const void *b);
+BOOL RXAssertionHelperNSRangeComparison(const void *a, const void *b);
+
+NSString *RXAssertionHelperHexadecimalDescription(const void *ref);
+NSString *RXAssertionHelperInt8Description(const void *ref);
+NSString *RXAssertionHelperUInt8Description(const void *ref);
+NSString *RXAssertionHelperInt16Description(const void *ref);
+NSString *RXAssertionHelperUInt16Description(const void *ref);
+NSString *RXAssertionHelperInt32Description(const void *ref);
+NSString *RXAssertionHelperUInt32Description(const void *ref);
+NSString *RXAssertionHelperInt64Description(const void *ref);
+NSString *RXAssertionHelperUInt64Description(const void *ref);
+NSString *RXAssertionHelperFloatDescription(const void *ref);
+NSString *RXAssertionHelperDoubleDescription(const void *ref);
+NSString *RXAssertionHelperObjectDescription(const void *ref);
+NSString *RXAssertionHelperNSPointDescription(const void *ref);
+NSString *RXAssertionHelperNSRangeDescription(const void *ref);
+
+
 BOOL RXAssertionHelperInt8Comparison(const void *a, const void *b) {
 	return (*(RXCast(a, const uint8_t *))) == (*(RXCast(b, const uint8_t *)));
 }
