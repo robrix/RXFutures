@@ -15,7 +15,6 @@
 		D4FCDC541482F1C000EB9EF7 /* RXFuture.h in Headers */ = {isa = PBXBuildFile; fileRef = D4FCDC521482F1C000EB9EF7 /* RXFuture.h */; };
 		D4FCDC551482F1C000EB9EF7 /* RXFuture.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FCDC531482F1C000EB9EF7 /* RXFuture.m */; };
 		D4FCDC581482F21500EB9EF7 /* RXFutureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FCDC571482F21500EB9EF7 /* RXFutureTests.m */; };
-		D4FCDC5B1482F25700EB9EF7 /* RXAssertions.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FCDC5A1482F25700EB9EF7 /* RXAssertions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +41,6 @@
 		D4FCDC521482F1C000EB9EF7 /* RXFuture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXFuture.h; sourceTree = "<group>"; };
 		D4FCDC531482F1C000EB9EF7 /* RXFuture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXFuture.m; sourceTree = "<group>"; };
 		D4FCDC571482F21500EB9EF7 /* RXFutureTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXFutureTests.m; sourceTree = "<group>"; };
-		D4FCDC591482F25700EB9EF7 /* RXAssertions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXAssertions.h; sourceTree = "<group>"; };
-		D4FCDC5A1482F25700EB9EF7 /* RXAssertions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXAssertions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,8 +125,6 @@
 		D4FCDC4114819D4100EB9EF7 /* RXFuturesTests */ = {
 			isa = PBXGroup;
 			children = (
-				D4FCDC591482F25700EB9EF7 /* RXAssertions.h */,
-				D4FCDC5A1482F25700EB9EF7 /* RXAssertions.m */,
 				D4FCDC571482F21500EB9EF7 /* RXFutureTests.m */,
 				D4FCDC4214819D4100EB9EF7 /* Supporting Files */,
 			);
@@ -263,7 +258,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4FCDC581482F21500EB9EF7 /* RXFutureTests.m in Sources */,
-				D4FCDC5B1482F25700EB9EF7 /* RXAssertions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
