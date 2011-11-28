@@ -1,0 +1,2 @@
+Documentation:
+- document the error messages that result from each assertion failure, to give people a feel for what RXAssertions gives you out of the box. @done(2009-09-27)

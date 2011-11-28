@@ -1,0 +1,7 @@
+// RXAssertions_Prefix.pch
+// Created by Rob Rix on 2009-09-17
+// Copyright 2009 Monochrome Industries
+
+#ifdef __OBJC__
+	#import <Foundation/Foundation.h>
+#endif
