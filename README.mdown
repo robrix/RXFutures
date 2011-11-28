@@ -1,0 +1,29 @@
+#RXSynchronously
+
+A convenient way to synchronize the calling thread on some asynchronous work.
+
+	// 1
+	RXSynchronously(^(RXSynchronousCompletionBlock didComplete) {
+		// 2
+		[worker doAsynchronousWorkWithCompletionHandler:^{
+			// 3
+			didComplete();
+		}];
+	});
+	// 4
+
+Control flow is, as you would expect, effectively serial:
+
+1. Control enters.
+2. Some asynchronous work is begun.
+3. The asynchronous work completes, at which point we call the `didComplete` block that RXSynchronously passed us.
+4. The calling thread resumes.
+
+#Use cases
+
+I use this widely when unit testing asynchronous code, with basically the same pattern as in the example above. OCUnit tests are necessarily synchronous, so `RXSynchronously` is an excellent way to button things down.
+
+#Gotchas
+
+- As with any attempt to block until some signal is received, you should beware of deadlocks. `RXSynchronouslyWithTimeout` may be more appropriate in some cases. This is especially likely when unit testing asynchronous code that executes on the main queue with OCUnit, as OCUnit executes on the main thread (where the main queue is dispatched).
+- Absolutely do not forget to call the `didComplete` block.
