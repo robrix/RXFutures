@@ -1,0 +1,115 @@
+#RXAssertions
+
+(Cleverly assertive macros for your testing enjoyment.)
+
+The key ideas here are simple:
+
+1. _Simple API._ Fewer assertion macros are better.
+2. _Simple asserting._ The macros should give you a smart enough error message that you don’t need to provide your own—but you can, optionally, if you want to.
+3. _Doesn’t replace `STAssert*`_. If you want or need to fall back on the SenTestingKit macros, you can.
+
+
+#Assertion Macros
+
+All of these log source for the condition/expression as appropriate. Anything else that gets logged is noted alongside.
+
+-	**`RXAssert(condition[, message])`**
+
+	Asserts that `condition` is true. Failures look like this:
+	
+		<condition> was unexpectedly false.
+	
+	If you supply a message, it will be logged instead of the default message shown above.
+
+-	**`RXAssertFalse(condition[, message])`**
+
+	Asserts that `condition` is false. Failures look like this:
+	
+		<condition> was unexpectedly true.
+	
+	If you supply a message, it will be logged instead of the default message shown above.
+
+-	**`RXAssertEquals(actual, expected[, message])`**
+
+	Asserts that the actual value is equal to the expected value; if it’s not, it logs what it actually was.
+	
+	This is valid for use with objects, scalars (including floats; see RXRound for more), structs, and really anything that you’ve registered a comparator for. See `RXAssertionHelper` for more info. Failures look like this:
+	
+		<actual expression> has value <actual value>, not expected value <expected value>.
+	
+	If you supply a message, it will be logged immediately after the default message shown above.
+	
+-	**`RXAssertNotEquals(actual, unexpected[, message])`**
+
+	Asserts that the actual value is not equal to the unexpected value; if it is, it logs what it unexpectedly was. Failures look like this:
+	
+		<actual expression> has unexpected value <actual value>.
+	
+	If you supply a message, it will be logged immediately after the default message shown above.
+
+-	**`RXAssertNil(object[, message])`**
+
+	Asserts that the object is nil. If it isn’t, it logs what it actually was. Failures look like this:
+	
+		<expression> was unexpectedly <expression value>, not nil.
+	
+	If you supply a message, it will be logged instead of the default message shown above.
+	
+-	**`RXAssertNotNil(object[, message])`**
+
+	Asserts that the object is not nil.
+	
+		<expression> was unexpectedly nil.
+	
+	If you supply a message, it will be logged instead of the default message shown above.
+
+#Helper Macros
+
+These are helpful macros which are used by RXAssertions or which are intended for your use.
+
+-	**`RXUnionCast(value, type)`**
+
+	Casts value to type using an on-the-fly union. This is safe for use with strict aliasing.
+
+-	**`RXRound(value, place)`**
+
+	Rounds value to place, e.g. `RXRound(M_PI, 0.01)` will result in `3.14`. You can use this with `RXAssertEquals` to easily test against floating point fixtures without worrying about IEEE float precision problems:
+	
+		RXAssertEquals(RXRound([thing returnPotentiallyImpreciseFloat], 0.01), 1.23);
+	
+	However, see `+[RXAssertionHelper floatingPointComparisonAccuracy]` for an alternative.
+
+
+#`RXAssertionHelper`
+
+True to its name, `RXAssertionHelper` helps the assertion macros with some of their tasks, namely:
+
+-	**Comparing values of arbitrary type.**
+	
+	`+registerComparisonFunction:forObjCType:` and `+compareValue:withValue:ofObjCType:` are used to add new comparators.
+	
+	RXAssertions ships with comparators for signed and unsigned integers of 8, 16, 32, and 64 bits of width; `float`s and `double`s; objects and classes; `NSPoint`s (and `CGPoint`s via the same function); and arbitrary pointers (and thus, unsupported types will be compared with pointer equality, which will presumably fail every time).
+	
+	To add other comparators, simply write the comparison function (matching the `RXAssertionHelperComparisonFunction` typedef) and register it with `RXAssertionHelper` somewhere convenient before you call `RXAssertEquals` with values of this type, perhaps in your test suite’s `+initialize` method.
+	
+	There is currently no support for comparing values of wildly different types! The expected value is assigned to a variable of the actual value’s type. If there is sufficient need for comparing `CGAffineTransform`s with tree frogs, this policy can be revised.
+
+-	**Describing values of arbitrary type.**
+	
+	`+registerDescriptionFunction:forObjCType` and `+descriptionForValue:ofObjCType:` are used to return an `NSString` instance describing the passed-in value.
+	
+	These are widely used in the assertion macros for logging of actual and expected values. RXAssertions includes descriptors for signed and unsigned integers of 8, 16, 32, and 64 bits of width; `float`s and `double`s; objects and classes; `NSPoint`s (and `CGPoint`s via the same function); and arbitrary pointers (which includes pointers to any unsupported types—so if you see hex dumps of your compared values, you will want to add a descriptor).
+	
+	Adding a descriptor is even simpler than adding a comparator; a `RXAssertionHelperDescriptionFunction` takes a reference to the value to be described, casts it (presumably using `RXUnionCast`) to the expected type, and builds an `NSString` from it.
+
+-	**Controlling the accuracy at which `RXAssertEquals` compares `float` and `double` values.**
+
+	`+[RXAssertionHelper floatingPointComparisonAccuracy]` and `+[RXAssertionHelper setFloatingPointComparisonAccuracy:]` are used to get and set the floating point accuracy, by default 0, used by the comparators for `float` and `double` values, and thus by `RXAssertEquals`.
+	
+	There is no support for managing separate `float` and `double` accuracies; if this would simplify things for you, it would be a simple change to make.
+
+
+#What’s Missing
+
+- Exception interaction of any kind. Continue using the `STAssert*` macros for exceptions until this is implemented.
+- Comparators and descriptors for `long double`, `CGSize`, `CGRect`, `CGAffineTransform`, `CFType` instances, and many other things. Patches welcome. 
