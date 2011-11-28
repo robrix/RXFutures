@@ -1,0 +1,410 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D4FCDC6B14830AD200EB9EF7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FCDC6A14830AD200EB9EF7 /* Cocoa.framework */; };
+		D4FCDC7514830AD300EB9EF7 /* RXSynchronously.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FCDC7414830AD300EB9EF7 /* RXSynchronously.m */; };
+		D4FCDC7D14830AD300EB9EF7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FCDC7C14830AD300EB9EF7 /* SenTestingKit.framework */; };
+		D4FCDC7E14830AD300EB9EF7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FCDC6A14830AD200EB9EF7 /* Cocoa.framework */; };
+		D4FCDC8114830AD300EB9EF7 /* libRXSynchronously.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FCDC6714830AD200EB9EF7 /* libRXSynchronously.a */; };
+		D4FCDC8714830AD300EB9EF7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4FCDC8514830AD300EB9EF7 /* InfoPlist.strings */; };
+		D4FCDC8A14830AD300EB9EF7 /* RXSynchronouslyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FCDC8914830AD300EB9EF7 /* RXSynchronouslyTests.m */; };
+		D4FCDC9514830BBC00EB9EF7 /* RXAssertions.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FCDC9414830BBC00EB9EF7 /* RXAssertions.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D4FCDC7F14830AD300EB9EF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4FCDC5E14830AD200EB9EF7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4FCDC6614830AD200EB9EF7;
+			remoteInfo = RXSynchronously;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D4FCDC6714830AD200EB9EF7 /* libRXSynchronously.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRXSynchronously.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4FCDC6A14830AD200EB9EF7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D4FCDC6D14830AD200EB9EF7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		D4FCDC6E14830AD200EB9EF7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D4FCDC6F14830AD200EB9EF7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D4FCDC7214830AD200EB9EF7 /* RXSynchronously-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RXSynchronously-Prefix.pch"; sourceTree = "<group>"; };
+		D4FCDC7314830AD300EB9EF7 /* RXSynchronously.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RXSynchronously.h; sourceTree = "<group>"; };
+		D4FCDC7414830AD300EB9EF7 /* RXSynchronously.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RXSynchronously.m; sourceTree = "<group>"; };
+		D4FCDC7B14830AD300EB9EF7 /* RXSynchronouslyTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RXSynchronouslyTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4FCDC7C14830AD300EB9EF7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		D4FCDC8414830AD300EB9EF7 /* RXSynchronouslyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RXSynchronouslyTests-Info.plist"; sourceTree = "<group>"; };
+		D4FCDC8614830AD300EB9EF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D4FCDC8914830AD300EB9EF7 /* RXSynchronouslyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RXSynchronouslyTests.m; sourceTree = "<group>"; };
+		D4FCDC9314830BBC00EB9EF7 /* RXAssertions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXAssertions.h; sourceTree = "<group>"; };
+		D4FCDC9414830BBC00EB9EF7 /* RXAssertions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXAssertions.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D4FCDC6414830AD200EB9EF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4FCDC6B14830AD200EB9EF7 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4FCDC7714830AD300EB9EF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4FCDC7D14830AD300EB9EF7 /* SenTestingKit.framework in Frameworks */,
+				D4FCDC7E14830AD300EB9EF7 /* Cocoa.framework in Frameworks */,
+				D4FCDC8114830AD300EB9EF7 /* libRXSynchronously.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D4FCDC5C14830AD200EB9EF7 = {
+			isa = PBXGroup;
+			children = (
+				D4FCDC7014830AD200EB9EF7 /* RXSynchronously */,
+				D4FCDC8214830AD300EB9EF7 /* RXSynchronouslyTests */,
+				D4FCDC6914830AD200EB9EF7 /* Frameworks */,
+				D4FCDC6814830AD200EB9EF7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D4FCDC6814830AD200EB9EF7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D4FCDC6714830AD200EB9EF7 /* libRXSynchronously.a */,
+				D4FCDC7B14830AD300EB9EF7 /* RXSynchronouslyTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D4FCDC6914830AD200EB9EF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4FCDC6A14830AD200EB9EF7 /* Cocoa.framework */,
+				D4FCDC7C14830AD300EB9EF7 /* SenTestingKit.framework */,
+				D4FCDC6C14830AD200EB9EF7 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D4FCDC6C14830AD200EB9EF7 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4FCDC6D14830AD200EB9EF7 /* AppKit.framework */,
+				D4FCDC6E14830AD200EB9EF7 /* CoreData.framework */,
+				D4FCDC6F14830AD200EB9EF7 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		D4FCDC7014830AD200EB9EF7 /* RXSynchronously */ = {
+			isa = PBXGroup;
+			children = (
+				D4FCDC7314830AD300EB9EF7 /* RXSynchronously.h */,
+				D4FCDC7414830AD300EB9EF7 /* RXSynchronously.m */,
+				D4FCDC7114830AD200EB9EF7 /* Supporting Files */,
+			);
+			path = RXSynchronously;
+			sourceTree = "<group>";
+		};
+		D4FCDC7114830AD200EB9EF7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4FCDC7214830AD200EB9EF7 /* RXSynchronously-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D4FCDC8214830AD300EB9EF7 /* RXSynchronouslyTests */ = {
+			isa = PBXGroup;
+			children = (
+				D4FCDC9314830BBC00EB9EF7 /* RXAssertions.h */,
+				D4FCDC9414830BBC00EB9EF7 /* RXAssertions.m */,
+				D4FCDC8914830AD300EB9EF7 /* RXSynchronouslyTests.m */,
+				D4FCDC8314830AD300EB9EF7 /* Supporting Files */,
+			);
+			path = RXSynchronouslyTests;
+			sourceTree = "<group>";
+		};
+		D4FCDC8314830AD300EB9EF7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4FCDC8414830AD300EB9EF7 /* RXSynchronouslyTests-Info.plist */,
+				D4FCDC8514830AD300EB9EF7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D4FCDC6514830AD200EB9EF7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D4FCDC6614830AD200EB9EF7 /* RXSynchronously */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4FCDC8D14830AD300EB9EF7 /* Build configuration list for PBXNativeTarget "RXSynchronously" */;
+			buildPhases = (
+				D4FCDC6314830AD200EB9EF7 /* Sources */,
+				D4FCDC6414830AD200EB9EF7 /* Frameworks */,
+				D4FCDC6514830AD200EB9EF7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RXSynchronously;
+			productName = RXSynchronously;
+			productReference = D4FCDC6714830AD200EB9EF7 /* libRXSynchronously.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D4FCDC7A14830AD300EB9EF7 /* RXSynchronouslyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4FCDC9014830AD300EB9EF7 /* Build configuration list for PBXNativeTarget "RXSynchronouslyTests" */;
+			buildPhases = (
+				D4FCDC7614830AD300EB9EF7 /* Sources */,
+				D4FCDC7714830AD300EB9EF7 /* Frameworks */,
+				D4FCDC7814830AD300EB9EF7 /* Resources */,
+				D4FCDC7914830AD300EB9EF7 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4FCDC8014830AD300EB9EF7 /* PBXTargetDependency */,
+			);
+			name = RXSynchronouslyTests;
+			productName = RXSynchronouslyTests;
+			productReference = D4FCDC7B14830AD300EB9EF7 /* RXSynchronouslyTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D4FCDC5E14830AD200EB9EF7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Monochrome Industries";
+			};
+			buildConfigurationList = D4FCDC6114830AD200EB9EF7 /* Build configuration list for PBXProject "RXSynchronously" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D4FCDC5C14830AD200EB9EF7;
+			productRefGroup = D4FCDC6814830AD200EB9EF7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D4FCDC6614830AD200EB9EF7 /* RXSynchronously */,
+				D4FCDC7A14830AD300EB9EF7 /* RXSynchronouslyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D4FCDC7814830AD300EB9EF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4FCDC8714830AD300EB9EF7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D4FCDC7914830AD300EB9EF7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D4FCDC6314830AD200EB9EF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4FCDC7514830AD300EB9EF7 /* RXSynchronously.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4FCDC7614830AD300EB9EF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4FCDC8A14830AD300EB9EF7 /* RXSynchronouslyTests.m in Sources */,
+				D4FCDC9514830BBC00EB9EF7 /* RXAssertions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D4FCDC8014830AD300EB9EF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4FCDC6614830AD200EB9EF7 /* RXSynchronously */;
+			targetProxy = D4FCDC7F14830AD300EB9EF7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D4FCDC8514830AD300EB9EF7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4FCDC8614830AD300EB9EF7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D4FCDC8B14830AD300EB9EF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D4FCDC8C14830AD300EB9EF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D4FCDC8E14830AD300EB9EF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RXSynchronously/RXSynchronously-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D4FCDC8F14830AD300EB9EF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RXSynchronously/RXSynchronously-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D4FCDC9114830AD300EB9EF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RXSynchronously/RXSynchronously-Prefix.pch";
+				INFOPLIST_FILE = "RXSynchronouslyTests/RXSynchronouslyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D4FCDC9214830AD300EB9EF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RXSynchronously/RXSynchronously-Prefix.pch";
+				INFOPLIST_FILE = "RXSynchronouslyTests/RXSynchronouslyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D4FCDC6114830AD200EB9EF7 /* Build configuration list for PBXProject "RXSynchronously" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4FCDC8B14830AD300EB9EF7 /* Debug */,
+				D4FCDC8C14830AD300EB9EF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4FCDC8D14830AD300EB9EF7 /* Build configuration list for PBXNativeTarget "RXSynchronously" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4FCDC8E14830AD300EB9EF7 /* Debug */,
+				D4FCDC8F14830AD300EB9EF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D4FCDC9014830AD300EB9EF7 /* Build configuration list for PBXNativeTarget "RXSynchronouslyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4FCDC9114830AD300EB9EF7 /* Debug */,
+				D4FCDC9214830AD300EB9EF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D4FCDC5E14830AD200EB9EF7 /* Project object */;
+}
