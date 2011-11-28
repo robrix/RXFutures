@@ -15,6 +15,8 @@
 		D4FCDC541482F1C000EB9EF7 /* RXFuture.h in Headers */ = {isa = PBXBuildFile; fileRef = D4FCDC521482F1C000EB9EF7 /* RXFuture.h */; };
 		D4FCDC551482F1C000EB9EF7 /* RXFuture.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FCDC531482F1C000EB9EF7 /* RXFuture.m */; };
 		D4FCDC581482F21500EB9EF7 /* RXFutureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FCDC571482F21500EB9EF7 /* RXFutureTests.m */; };
+		D4FCDCC4148327B500EB9EF7 /* RXAssertions.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FCDC9D148327B400EB9EF7 /* RXAssertions.m */; };
+		D4FCDCCD148327B500EB9EF7 /* RXSynchronously.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FCDCAF148327B400EB9EF7 /* RXSynchronously.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,10 @@
 		D4FCDC521482F1C000EB9EF7 /* RXFuture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXFuture.h; sourceTree = "<group>"; };
 		D4FCDC531482F1C000EB9EF7 /* RXFuture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXFuture.m; sourceTree = "<group>"; };
 		D4FCDC571482F21500EB9EF7 /* RXFutureTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXFutureTests.m; sourceTree = "<group>"; };
+		D4FCDC9C148327B400EB9EF7 /* RXAssertions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXAssertions.h; sourceTree = "<group>"; };
+		D4FCDC9D148327B400EB9EF7 /* RXAssertions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXAssertions.m; sourceTree = "<group>"; };
+		D4FCDCAE148327B400EB9EF7 /* RXSynchronously.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXSynchronously.h; sourceTree = "<group>"; };
+		D4FCDCAF148327B400EB9EF7 /* RXSynchronously.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXSynchronously.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,7 @@
 		D4FCDC1B14819D4100EB9EF7 = {
 			isa = PBXGroup;
 			children = (
+				D4FCDC96148327B400EB9EF7 /* External */,
 				D4FCDC2F14819D4100EB9EF7 /* RXFutures */,
 				D4FCDC4114819D4100EB9EF7 /* RXFuturesTests */,
 				D4FCDC2814819D4100EB9EF7 /* Frameworks */,
@@ -138,6 +145,41 @@
 				D4FCDC4414819D4100EB9EF7 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D4FCDC96148327B400EB9EF7 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				D4FCDC97148327B400EB9EF7 /* RXAssertions */,
+				D4FCDCA8148327B400EB9EF7 /* RXSynchronously */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		D4FCDC97148327B400EB9EF7 /* RXAssertions */ = {
+			isa = PBXGroup;
+			children = (
+				D4FCDC9C148327B400EB9EF7 /* RXAssertions.h */,
+				D4FCDC9D148327B400EB9EF7 /* RXAssertions.m */,
+			);
+			path = RXAssertions;
+			sourceTree = "<group>";
+		};
+		D4FCDCA8148327B400EB9EF7 /* RXSynchronously */ = {
+			isa = PBXGroup;
+			children = (
+				D4FCDCAC148327B400EB9EF7 /* RXSynchronously */,
+			);
+			path = RXSynchronously;
+			sourceTree = "<group>";
+		};
+		D4FCDCAC148327B400EB9EF7 /* RXSynchronously */ = {
+			isa = PBXGroup;
+			children = (
+				D4FCDCAE148327B400EB9EF7 /* RXSynchronously.h */,
+				D4FCDCAF148327B400EB9EF7 /* RXSynchronously.m */,
+			);
+			path = RXSynchronously;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +300,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4FCDC581482F21500EB9EF7 /* RXFutureTests.m in Sources */,
+				D4FCDCC4148327B500EB9EF7 /* RXAssertions.m in Sources */,
+				D4FCDCCD148327B500EB9EF7 /* RXSynchronously.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
