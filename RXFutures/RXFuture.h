@@ -4,6 +4,22 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RXFuture : NSObject
+@interface RXFuture : NSObject {
+@private
+	BOOL completed;
+	BOOL cancelled;
+	NSMutableSet *completionHandlers;
+	NSMutableSet *cancellationHandlers;
+	dispatch_queue_t queue;
+}
+
+-(void)onComplete:(void(^)())block;
+-(void)onCancel:(void(^)())block;
+
+-(void)cancel;
+-(void)complete;
+
+@property (nonatomic, readonly, assign, getter=isCancelled) BOOL cancelled;
+@property (nonatomic, readonly, assign, getter=isCompleted) BOOL completed;
 
 @end
