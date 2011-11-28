@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		D4FCDC2A14819D4100EB9EF7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FCDC2914819D4100EB9EF7 /* Cocoa.framework */; };
-		D4FCDC3414819D4100EB9EF7 /* RXFutures.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FCDC3314819D4100EB9EF7 /* RXFutures.m */; };
 		D4FCDC3C14819D4100EB9EF7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FCDC3B14819D4100EB9EF7 /* SenTestingKit.framework */; };
 		D4FCDC3D14819D4100EB9EF7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FCDC2914819D4100EB9EF7 /* Cocoa.framework */; };
 		D4FCDC4014819D4100EB9EF7 /* libRXFutures.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FCDC2614819D4100EB9EF7 /* libRXFutures.a */; };
 		D4FCDC4614819D4100EB9EF7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4FCDC4414819D4100EB9EF7 /* InfoPlist.strings */; };
-		D4FCDC4914819D4100EB9EF7 /* RXFuturesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FCDC4814819D4100EB9EF7 /* RXFuturesTests.m */; };
+		D4FCDC541482F1C000EB9EF7 /* RXFuture.h in Headers */ = {isa = PBXBuildFile; fileRef = D4FCDC521482F1C000EB9EF7 /* RXFuture.h */; };
+		D4FCDC551482F1C000EB9EF7 /* RXFuture.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FCDC531482F1C000EB9EF7 /* RXFuture.m */; };
+		D4FCDC581482F21500EB9EF7 /* RXFutureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FCDC571482F21500EB9EF7 /* RXFutureTests.m */; };
+		D4FCDC5B1482F25700EB9EF7 /* RXAssertions.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FCDC5A1482F25700EB9EF7 /* RXAssertions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,15 +34,16 @@
 		D4FCDC2C14819D4100EB9EF7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		D4FCDC2D14819D4100EB9EF7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D4FCDC2E14819D4100EB9EF7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		D4FCDC3114819D4100EB9EF7 /* RXFutures-Prefix.pch */ = {isa = PBXFileReference; path = "RXFutures-Prefix.pch"; sourceTree = "<group>"; };
-		D4FCDC3214819D4100EB9EF7 /* RXFutures.h */ = {isa = PBXFileReference; path = RXFutures.h; sourceTree = "<group>"; };
-		D4FCDC3314819D4100EB9EF7 /* RXFutures.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RXFutures.m; sourceTree = "<group>"; };
+		D4FCDC3114819D4100EB9EF7 /* RXFutures-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RXFutures-Prefix.pch"; sourceTree = "<group>"; };
 		D4FCDC3A14819D4100EB9EF7 /* RXFuturesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RXFuturesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4FCDC3B14819D4100EB9EF7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		D4FCDC4314819D4100EB9EF7 /* RXFuturesTests-Info.plist */ = {isa = PBXFileReference; path = "RXFuturesTests-Info.plist"; sourceTree = "<group>"; };
+		D4FCDC4314819D4100EB9EF7 /* RXFuturesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RXFuturesTests-Info.plist"; sourceTree = "<group>"; };
 		D4FCDC4514819D4100EB9EF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D4FCDC4714819D4100EB9EF7 /* RXFuturesTests.h */ = {isa = PBXFileReference; path = RXFuturesTests.h; sourceTree = "<group>"; };
-		D4FCDC4814819D4100EB9EF7 /* RXFuturesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RXFuturesTests.m; sourceTree = "<group>"; };
+		D4FCDC521482F1C000EB9EF7 /* RXFuture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXFuture.h; sourceTree = "<group>"; };
+		D4FCDC531482F1C000EB9EF7 /* RXFuture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXFuture.m; sourceTree = "<group>"; };
+		D4FCDC571482F21500EB9EF7 /* RXFutureTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXFutureTests.m; sourceTree = "<group>"; };
+		D4FCDC591482F25700EB9EF7 /* RXAssertions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXAssertions.h; sourceTree = "<group>"; };
+		D4FCDC5A1482F25700EB9EF7 /* RXAssertions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXAssertions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +110,8 @@
 		D4FCDC2F14819D4100EB9EF7 /* RXFutures */ = {
 			isa = PBXGroup;
 			children = (
-				D4FCDC3214819D4100EB9EF7 /* RXFutures.h */,
-				D4FCDC3314819D4100EB9EF7 /* RXFutures.m */,
+				D4FCDC521482F1C000EB9EF7 /* RXFuture.h */,
+				D4FCDC531482F1C000EB9EF7 /* RXFuture.m */,
 				D4FCDC3014819D4100EB9EF7 /* Supporting Files */,
 			);
 			path = RXFutures;
@@ -125,8 +128,9 @@
 		D4FCDC4114819D4100EB9EF7 /* RXFuturesTests */ = {
 			isa = PBXGroup;
 			children = (
-				D4FCDC4714819D4100EB9EF7 /* RXFuturesTests.h */,
-				D4FCDC4814819D4100EB9EF7 /* RXFuturesTests.m */,
+				D4FCDC591482F25700EB9EF7 /* RXAssertions.h */,
+				D4FCDC5A1482F25700EB9EF7 /* RXAssertions.m */,
+				D4FCDC571482F21500EB9EF7 /* RXFutureTests.m */,
 				D4FCDC4214819D4100EB9EF7 /* Supporting Files */,
 			);
 			path = RXFuturesTests;
@@ -148,6 +152,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4FCDC541482F1C000EB9EF7 /* RXFuture.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4FCDC3414819D4100EB9EF7 /* RXFutures.m in Sources */,
+				D4FCDC551482F1C000EB9EF7 /* RXFuture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +262,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4FCDC4914819D4100EB9EF7 /* RXFuturesTests.m in Sources */,
+				D4FCDC581482F21500EB9EF7 /* RXFutureTests.m in Sources */,
+				D4FCDC5B1482F25700EB9EF7 /* RXAssertions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +310,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -325,7 +331,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = macosx;
 			};
 			name = Release;
