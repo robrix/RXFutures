@@ -1,0 +1,83 @@
+#What
+
+Futures are a way to represent the expected result of some asynchronous action. RXFuture is a class for handling cancellation and completion and the notification of either for asynchronous tasks.
+
+
+#How
+
+Let’s start with a simple asynchronous worker which calls a block with its result when it’s done:
+
+	-(void)workWithCompletionHandler:(void(^)(id))block {
+		dispatch_async(dispatch_get_global_queue(DISPATCH_PRIORITY_DEFAULT), 0), ^{
+			// work work work
+			block(@"all done!");
+		});
+	}
+
+So far so good. We’d like to be able to cancel it, though. Let’s start by using a future to handle completion notification:
+
+	-(RXFuture *)workWithCompletionHandler:(void(^)(id))block {
+		RXFuture *future = [RXFuture new];
+		[future onComplete:^{
+			block(@"all done!");
+		}];
+		dispatch_async(dispatch_get_global_queue(DISPATCH_PRIORITY_DEFAULT, 0), ^{
+			// work work work
+			[future complete];
+		});
+		return future;
+	}
+
+Now the caller has something to cancel:
+
+	@synthesize future; // assume this exists
+	
+	-(IBAction)startWorking:(id)sender {
+		[self showIndeterminateProgressBar];
+		
+		self.future = [worker workWithCompletionHandler:^(id result) {
+			// we got a result!
+			[self hideIndeterminateProgressBar];
+			self.future = nil;
+		}];
+		
+		[future onCancel:^{
+			// clean up anything that might depend on what we attempt to do in the completion handler
+			[self hideIndeterminateProgressBar];
+			self.future = nil;
+		}];
+	}
+	
+	-(IBAction)cancel:(id)sender {
+		[future cancel];
+	}
+
+So far, so good—when the user cancels, we clean up the UI as necessary. The correct block will be called when the work completes successfully and when the user cancels it early. But the worker doesn’t actually cancel anything; that’s wasteful.
+
+RXFuture supports multiple completion and cancellation handlers; it will call all of the completion handlers when it’s completed, and all of the cancellation handlers when it’s cancelled. You can take advantage of this to have your worker stop when it’s cancelled. Here’s an example that cancels an NSURLConnection when the future is cancelled:
+
+	NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];
+	[future onCancel:^{
+		[connection cancel];
+	}];
+
+
+#Details
+
+It’s worth being aware of the specific semantics of RXFuture:
+
+- completion handlers aren’t called when the future is cancelled
+- cancellation handlers aren’t called when the future is completed
+- multiple calls to `-cancel` will only result in the cancellation handlers being called once
+- multiple calls to `-complete` will only result in the completion handlers being called once
+- be sure to call `-onComplete:` before calling `-complete`, and to call `-onCancel:` before calling `-cancel`
+- because of the above, if your asynchronous task can cancel itself, you may want to have the caller pass in a cancellation handler so you can set it before you start working, to avoid a race condition on cancellation
+- if your completion handler requires a result that you don’t have when the task is started, it’s okay to call `-onComplete:` with the appropriate block just before calling `-complete`
+- for the obvious reasons, only workers should call `-complete` on their futures unless both are designed to handle this; both clients and workers can both call `-cancel`, however
+- calls to `-cancel` and `-complete` are serialized; the first one dequeued wins
+- don’t rely on `-isCompleted` and `-isCancelled`; their return values are potentially obsolete before they’ve returned
+
+
+#Thanks
+
+Thanks to Andy Matuschak for some fascinating thought experiments!
