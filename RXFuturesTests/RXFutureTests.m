@@ -115,6 +115,23 @@
 	RXAssertEquals(result, 0);
 }
 
+-(void)testCallsMultipleCancellationHandlersOnCancellation {
+	RXSynchronously(^(RXSynchronousCompletionBlock doneA) {
+		RXSynchronously(^(RXSynchronousCompletionBlock doneB) {
+			[future onCancel:^{
+				self.result += 2;
+				doneA();
+			}];
+			[future onCancel:^{
+				self.result += 2;
+				doneB();
+			}];
+			[future cancel];
+		});
+	});
+	RXAssertEquals(result, 4);
+}
+
 
 -(void)testCallsCompletionHandlersOnCompletion {
 	RXSynchronously(^(RXSynchronousCompletionBlock done) {
@@ -145,6 +162,23 @@
 		[future cancel];
 	});
 	RXAssertEquals(result, 0);
+}
+
+-(void)testCallsMultipleCompletionHandlersOnCompletion {
+	RXSynchronously(^(RXSynchronousCompletionBlock doneA) {
+		RXSynchronously(^(RXSynchronousCompletionBlock doneB) {
+			[future onComplete:^{
+				self.result += 4;
+				doneA();
+			}];
+			[future onComplete:^{
+				self.result += 4;
+				doneB();
+			}];
+			[future complete];
+		});
+	});
+	RXAssertEquals(result, 8);
 }
 
 @end
