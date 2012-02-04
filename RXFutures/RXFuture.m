@@ -29,6 +29,11 @@
 }
 
 
+-(void)dispatchBlock:(void(^)())block {
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block);
+}
+
+
 -(void)onComplete:(void(^)())block {
 	dispatch_async(queue, ^{
 		[completionHandlers addObject:block];
@@ -47,7 +52,7 @@
 		if(!cancelled && !completed) {
 			self.cancelled = YES;
 			for(void (^block)() in cancellationHandlers) {
-				dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block);
+				[self dispatchBlock:block];
 			}
 		}
 	});
@@ -58,7 +63,7 @@
 		if(!cancelled && !completed) {
 			self.completed = YES;
 			for(void (^block)() in completionHandlers) {
-				dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block);
+				[self dispatchBlock:block];
 			}
 		}
 	});
