@@ -61,6 +61,11 @@ RXFuture supports multiple completion and cancellation handlers; it will call al
 		[connection cancel];
 	}];
 
+Finally, if a completion or cancellation block is added after the future is completed or cancelled, it will be dispatched immediately:
+
+	[future cancel];
+	[future onCancel:^{ NSLog(@"this block will be run because the future has already been cancelled."); }];
+
 
 #Details
 
@@ -68,11 +73,11 @@ It’s worth being aware of the specific semantics of RXFuture:
 
 - completion handlers aren’t called when the future is cancelled
 - cancellation handlers aren’t called when the future is completed
-- multiple calls to `-cancel` will only result in the cancellation handlers being called once
-- multiple calls to `-complete` will only result in the completion handlers being called once
-- be sure to call `-onComplete:` before calling `-complete`, and to call `-onCancel:` before calling `-cancel`
-- because of the above, if your asynchronous task can cancel itself, you may want to have the caller pass in a cancellation handler so you can set it before you start working, to avoid a race condition on cancellation
-- if your completion handler requires a result that you don’t have when the task is started, it’s okay to call `-onComplete:` with the appropriate block just before calling `-complete`
+- multiple calls to `-cancel` will result in each cancellation handler being called exactly once
+- multiple calls to `-complete` will result in each completion handler being called exactly once
+- completion handlers added after completion will be dispatched immediately
+- cancellation handlers added after cancellation will be dispatched immediately
+- if your completion handler requires a result that you don’t have when the task is started, it’s okay to call `-onComplete:` with the appropriate block just before (or after!) calling `-complete`
 - for the obvious reasons, only workers should call `-complete` on their futures unless both are designed to handle this; both clients and workers can both call `-cancel`, however
 - calls to `-cancel` and `-complete` are serialized; the first one dequeued wins
 - don’t rely on `-isCompleted` and `-isCancelled`; their return values are potentially obsolete before they’ve returned
@@ -80,4 +85,4 @@ It’s worth being aware of the specific semantics of RXFuture:
 
 #Thanks
 
-Thanks to Andy Matuschak for some fascinating thought experiments!
+Thanks to Andy Matuschak for some fascinating thought experiments that kicked this all off, and to Dave Dribin for discussion which refined RXFutures.
