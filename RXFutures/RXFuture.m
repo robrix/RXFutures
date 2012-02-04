@@ -36,13 +36,19 @@
 
 -(void)onComplete:(void(^)())block {
 	dispatch_async(queue, ^{
-		[completionHandlers addObject:block];
+		if(completed)
+			[self dispatchBlock:block];
+		else
+			[completionHandlers addObject:block];
 	});
 }
 
 -(void)onCancel:(void(^)())block {
 	dispatch_async(queue, ^{
-		[cancellationHandlers addObject:block];
+		if(cancelled)
+			[self dispatchBlock:block];
+		else
+			[cancellationHandlers addObject:block];
 	});
 }
 

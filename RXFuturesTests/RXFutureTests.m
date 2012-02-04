@@ -80,25 +80,36 @@
 
 
 -(void)addAction:(NSString *)action {
-	dispatch_async(queue, ^{
+	dispatch_sync(queue, ^{
 		[actions addObject:action];
 	});
 }
 
 
 -(void)testCallsCancellationHandlersOnCancellation {
-	[future onCancel:^{ [self addAction:@"a"]; }];
-	[future onCancel:^{ [self addAction:@"b"]; }];
 	RXSynchronously(^(RXSynchronousCompletionBlock done) {
-		[future onCancel:done];
+		[future onCancel:^{
+			[self addAction:@"a"];
+			done();
+		}];
 		[future cancel];
 	});
-	RXAssertEquals(actions, ([NSSet setWithObjects:@"a", @"b", nil]));
+	RXAssertEquals(actions, [NSSet setWithObject:@"a"]);
+}
+
+-(void)testCallsCancellationHandlersAddedAfterCancellation {
+	RXSynchronously(^(RXSynchronousCompletionBlock done) {
+		[future cancel];
+		[future onCancel:^{
+			[self addAction:@"a"];
+			done();
+		}];
+	});
+	RXAssertEquals(actions, [NSSet setWithObject:@"a"]);
 }
 
 -(void)testDoesNotCallCancellationHandlersOnCompletion {
 	[future onCancel:^{ [self addAction:@"a"]; }];
-	[future onCancel:^{ [self addAction:@"b"]; }];
 	RXSynchronously(^(RXSynchronousCompletionBlock done) {
 		[future onComplete:done];
 		[future complete];
@@ -108,18 +119,29 @@
 
 
 -(void)testCallsCompletionHandlersOnCompletion {
-	[future onComplete:^{ [self addAction:@"a"]; }];
-	[future onComplete:^{ [self addAction:@"b"]; }];
 	RXSynchronously(^(RXSynchronousCompletionBlock done) {
-		[future onComplete:done];
+		[future onComplete:^{
+			[self addAction:@"a"];
+			done();
+		}];
 		[future complete];
 	});
-	RXAssertEquals(actions, ([NSSet setWithObjects:@"a", @"b", nil]));
+	RXAssertEquals(actions, [NSSet setWithObject:@"a"]);
+}
+
+-(void)testCallsCompletionHandlersAddedAfterCompletion {
+	RXSynchronously(^(RXSynchronousCompletionBlock done) {
+		[future complete];
+		[future onComplete:^{
+			[self addAction:@"a"];
+			done();
+		}];
+	});
+	RXAssertEquals(actions, [NSSet setWithObject:@"a"]);
 }
 
 -(void)testDoesNotCallCompletionHandlersOnCancellation {
 	[future onComplete:^{ [self addAction:@"a"]; }];
-	[future onComplete:^{ [self addAction:@"b"]; }];
 	RXSynchronously(^(RXSynchronousCompletionBlock done) {
 		[future onCancel:done];
 		[future cancel];
