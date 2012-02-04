@@ -9,7 +9,7 @@
 @interface RXFutureTests : SenTestCase
 
 @property (nonatomic, strong) RXFuture *future;
-@property (nonatomic, strong) NSMutableSet *actions;
+@property (nonatomic, assign) NSUInteger result;
 
 @end
 
@@ -18,19 +18,19 @@
 	dispatch_queue_t queue;
 }
 
-@synthesize future, actions;
+@synthesize future, result;
 
 
 -(void)setUp {
 	self.future = [RXFuture new];
-	self.actions = [NSMutableSet new];
+	result = 0;
 	queue = dispatch_queue_create("RXFutureTests", 0);
 }
 
 -(void)tearDown {
 	self.future = nil;
-	self.actions = nil;
 	dispatch_release(queue);
+	queue = NULL;
 }
 
 
@@ -61,7 +61,6 @@
 		[future cancel];
 		[future complete];
 	});
-	
 	RXAssert(future.isCancelled);
 	RXAssertFalse(future.isCompleted);
 }
@@ -73,15 +72,14 @@
 		[future complete];
 		[future cancel];
 	});
-	
 	RXAssertFalse(future.isCancelled);
 	RXAssert(future.isCompleted);
 }
 
 
--(void)addAction:(NSString *)action {
+-(void)setResult:(NSUInteger)_result {
 	dispatch_sync(queue, ^{
-		[actions addObject:action];
+		result = _result;
 	});
 }
 
@@ -89,64 +87,64 @@
 -(void)testCallsCancellationHandlersOnCancellation {
 	RXSynchronously(^(RXSynchronousCompletionBlock done) {
 		[future onCancel:^{
-			[self addAction:@"a"];
+			self.result = 1;
 			done();
 		}];
 		[future cancel];
 	});
-	RXAssertEquals(actions, [NSSet setWithObject:@"a"]);
+	RXAssertEquals(result, 1);
 }
 
 -(void)testCallsCancellationHandlersAddedAfterCancellation {
 	RXSynchronously(^(RXSynchronousCompletionBlock done) {
 		[future cancel];
 		[future onCancel:^{
-			[self addAction:@"a"];
+			self.result = 2;
 			done();
 		}];
 	});
-	RXAssertEquals(actions, [NSSet setWithObject:@"a"]);
+	RXAssertEquals(result, 2);
 }
 
 -(void)testDoesNotCallCancellationHandlersOnCompletion {
-	[future onCancel:^{ [self addAction:@"a"]; }];
+	[future onCancel:^{ self.result = 3; }];
 	RXSynchronously(^(RXSynchronousCompletionBlock done) {
 		[future onComplete:done];
 		[future complete];
 	});
-	RXAssertEquals(actions, [NSSet set]);
+	RXAssertEquals(result, 0);
 }
 
 
 -(void)testCallsCompletionHandlersOnCompletion {
 	RXSynchronously(^(RXSynchronousCompletionBlock done) {
 		[future onComplete:^{
-			[self addAction:@"a"];
+			self.result = 5;
 			done();
 		}];
 		[future complete];
 	});
-	RXAssertEquals(actions, [NSSet setWithObject:@"a"]);
+	RXAssertEquals(result, 5);
 }
 
 -(void)testCallsCompletionHandlersAddedAfterCompletion {
 	RXSynchronously(^(RXSynchronousCompletionBlock done) {
 		[future complete];
 		[future onComplete:^{
-			[self addAction:@"a"];
+			self.result = 6;
 			done();
 		}];
 	});
-	RXAssertEquals(actions, [NSSet setWithObject:@"a"]);
+	RXAssertEquals(result, 6);
 }
 
 -(void)testDoesNotCallCompletionHandlersOnCancellation {
-	[future onComplete:^{ [self addAction:@"a"]; }];
+	[future onComplete:^{ self.result = 7; }];
 	RXSynchronously(^(RXSynchronousCompletionBlock done) {
 		[future onCancel:done];
 		[future cancel];
 	});
-	RXAssertEquals(actions, [NSSet set]);
+	RXAssertEquals(result, 0);
 }
 
 @end
