@@ -32,50 +32,66 @@
 }
 
 
--(void)dispatchBlock:(void(^)())block {
+-(void)dispatchCallback:(void(^)())block {
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block);
 }
 
 
--(void)onComplete:(void(^)())block {
-	dispatch_async(queue, ^{
-		if(completed)
-			[self dispatchBlock:block];
-		else
-			[completionHandlers addObject:block];
-	});
+-(void)performBlock:(void(^)())block
+{
+	dispatch_async(queue, block);
 }
+
 
 -(void)onCancel:(void(^)())block {
-	dispatch_async(queue, ^{
+	[self performBlock:^{
 		if(cancelled)
-			[self dispatchBlock:block];
+			[self dispatchCallback:block];
 		else
 			[cancellationHandlers addObject:block];
-	});
+	}];
 }
 
-
 -(void)cancel {
-	dispatch_async(queue, ^{
+	[self performBlock:^{
 		if(!cancelled && !completed) {
 			self.cancelled = YES;
 			for(void (^block)() in cancellationHandlers) {
-				[self dispatchBlock:block];
+				[self dispatchCallback:block];
 			}
 		}
-	});
+	}];
+}
+
+-(void)cancel:(void(^)())block {
+	[self onCancel:block];
+	[self cancel];
+}
+
+
+-(void)onComplete:(void(^)())block {
+	[self performBlock:^{
+		if(completed)
+			[self dispatchCallback:block];
+		else
+			[completionHandlers addObject:block];
+	}];
 }
 
 -(void)complete {
-	dispatch_async(queue, ^{
+	[self performBlock:^{
 		if(!cancelled && !completed) {
 			self.completed = YES;
 			for(void (^block)() in completionHandlers) {
-				[self dispatchBlock:block];
+				[self dispatchCallback:block];
 			}
 		}
-	});
+	}];
+}
+
+-(void)complete:(void(^)())block {
+	[self onComplete:block];
+	[self complete];
 }
 
 @end

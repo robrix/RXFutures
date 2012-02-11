@@ -14,11 +14,16 @@
 }
 
 -(void)onComplete:(void(^)())block;
--(void)onCancel:(void(^)())block;
-
--(void)cancel;
 -(void)complete;
+-(void)complete:(void(^)())block; // shorthand for -onComplete: followed by -complete
 
+-(void)onCancel:(void(^)())block;
+-(void)cancel;
+-(void)cancel:(void(^)())block; // shorthand for -onCancel: followed by -cancel
+
+-(void)performBlock:(void(^)())block;
+
+// these properties are only meaningful and safe within blocks passed to -performBlock:
 @property (nonatomic, readonly, assign, getter=isCancelled) BOOL cancelled;
 @property (nonatomic, readonly, assign, getter=isCompleted) BOOL completed;
 
