@@ -23,6 +23,8 @@
 
 -(void)performBlock:(void(^)())block;
 
+-(void)unlessCancelled:(void(^)())block;
+
 // these properties are only meaningful and safe within blocks passed to -performBlock:
 @property (nonatomic, readonly, assign, getter=isCancelled) BOOL cancelled;
 @property (nonatomic, readonly, assign, getter=isCompleted) BOOL completed;

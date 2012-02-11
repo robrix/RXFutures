@@ -37,12 +37,6 @@
 }
 
 
--(void)performBlock:(void(^)())block
-{
-	dispatch_async(queue, block);
-}
-
-
 -(void)onCancel:(void(^)())block {
 	[self performBlock:^{
 		if(cancelled)
@@ -92,6 +86,18 @@
 -(void)complete:(void(^)())block {
 	[self onComplete:block];
 	[self complete];
+}
+
+
+-(void)performBlock:(void(^)())block {
+	dispatch_async(queue, block);
+}
+
+
+-(void)unlessCancelled:(void(^)())block {
+	[self performBlock:^{
+		if(!cancelled) block();
+	}];
 }
 
 @end
