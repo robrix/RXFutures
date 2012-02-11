@@ -25,7 +25,10 @@
 }
 
 -(void)dealloc {
+	[completionHandlers release];
+	[cancellationHandlers release];
 	dispatch_release(queue);
+	[super dealloc];
 }
 
 
