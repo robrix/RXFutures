@@ -100,4 +100,9 @@
 	}];
 }
 
+
+-(void)cascadeCancellationToFuture:(RXFuture *)future {
+	[self onCancel:^{ [future cancel]; }];
+}
+
 @end
