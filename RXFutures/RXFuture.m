@@ -15,6 +15,12 @@
 
 @synthesize cancelled, completed;
 
+
++(RXFuture *)future {
+	return [[self new] autorelease];
+}
+
+
 -(id)init {
 	if((self = [super init])) {
 		completionHandlers = [NSMutableSet new];
@@ -38,12 +44,13 @@
 
 
 -(void)onCancel:(void(^)())block {
-	[self performBlock:^{
-		if(cancelled)
-			[self dispatchCallback:block];
-		else
-			[cancellationHandlers addObject:block];
-	}];
+	if(block)
+		[self performBlock:^{
+			if(cancelled)
+				[self dispatchCallback:block];
+			else
+				[cancellationHandlers addObject:block];
+		}];
 }
 
 -(void)cancel {
@@ -64,12 +71,13 @@
 
 
 -(void)onComplete:(void(^)())block {
-	[self performBlock:^{
-		if(completed)
-			[self dispatchCallback:block];
-		else
-			[completionHandlers addObject:block];
-	}];
+	if(block)
+		[self performBlock:^{
+			if(completed)
+				[self dispatchCallback:block];
+			else
+				[completionHandlers addObject:block];
+		}];
 }
 
 -(void)complete {
@@ -102,7 +110,8 @@
 
 
 -(void)cascadeCancellationToFuture:(RXFuture *)future {
-	[self onCancel:^{ [future cancel]; }];
+	if(future)
+		[self onCancel:^{ [future cancel]; }];
 }
 
 @end

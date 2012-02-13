@@ -13,6 +13,8 @@
 	dispatch_queue_t queue;
 }
 
++(RXFuture *)future;
+
 -(void)onComplete:(void(^)())block;
 -(void)complete;
 -(void)complete:(void(^)())block; // shorthand for -onComplete: followed by -complete
