@@ -97,6 +97,12 @@
 }
 
 
+-(void)onCleanUp:(void(^)())block {
+	[self onComplete:block];
+	[self onCancel:block];
+}
+
+
 -(void)performBlock:(void(^)())block {
 	dispatch_async(queue, block);
 }

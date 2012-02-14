@@ -23,6 +23,8 @@
 -(void)cancel;
 -(void)cancel:(void(^)())block; // shorthand for -onCancel: followed by -cancel
 
+-(void)onCleanUp:(void(^)())block; // performed on completion or cancellation
+
 -(void)performBlock:(void(^)())block;
 
 -(void)unlessCancelled:(void(^)())block;
