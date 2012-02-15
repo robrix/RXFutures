@@ -52,7 +52,7 @@ Now the caller has something to cancel:
 		[future cancel];
 	}
 
-So far, so good—when the user cancels, we clean up the UI as necessary. The correct block will be called when the work completes successfully and when the user cancels it early. But the worker doesn’t actually cancel anything; that’s wasteful.
+So far, so good—when the user cancels, we clean up the UI as necessary safe in the knowledge that the completion block won’t be called on us. The correct block will be called when the work completes successfully and when the user cancels it early. But the worker doesn’t actually cancel anything; that’s wasteful.
 
 RXFuture supports multiple completion and cancellation handlers; it will call all of the completion handlers when it’s completed, and all of the cancellation handlers when it’s cancelled. You can take advantage of this to have your worker stop when it’s cancelled. Here’s an example that cancels an NSURLConnection when the future is cancelled:
 
@@ -61,10 +61,27 @@ RXFuture supports multiple completion and cancellation handlers; it will call al
 		[connection cancel];
 	}];
 
-Finally, if a completion or cancellation block is added after the future is completed or cancelled, it will be dispatched immediately:
+If you’re implementing an asynchronous worker that needs to pass the result of some calculation to its caller via a block, it’s perfectly valid to call `-onComplete:` immediately before (or as you’ll see below, after) calling `-complete`.
+
+	id result = …;
+	[future onComplete:^{ block(result); }]
+	[future complete];
+
+As a convenience, `-complete:` and its cancellation analog `-cancel:` (note the colon!) act as shorthand for this:
+
+	id result = …;
+	[future complete:^{ block(result); }]
+
+If a completion or cancellation block is added after the future is completed or cancelled, it will be dispatched immediately:
 
 	[future cancel];
 	[future onCancel:^{ NSLog(@"this block will be run because the future has already been cancelled."); }];
+
+Work that needs to be done on either cancellation or completion can be handled with `-onCleanUp:`. It will be called exactly once, when the future enters either of those states:
+
+	RXFuture *future = [worker startDoingSomething];
+	id workerDependentObject = [… new];
+	[future onCleanUp:^{ [workerDependentObject tidyYourselfUpALittle]; }];
 
 
 #Details
@@ -73,6 +90,7 @@ It’s worth being aware of the specific semantics of RXFuture:
 
 - completion handlers aren’t called when the future is cancelled
 - cancellation handlers aren’t called when the future is completed
+- cleanup handlers (added with -onCleanUp:) are called exactly once when the future is cancelled OR completed
 - multiple calls to `-cancel` will result in each cancellation handler being called exactly once
 - multiple calls to `-complete` will result in each completion handler being called exactly once
 - completion handlers added after completion will be dispatched immediately
@@ -80,7 +98,7 @@ It’s worth being aware of the specific semantics of RXFuture:
 - if your completion handler requires a result that you don’t have when the task is started, it’s okay to call `-onComplete:` with the appropriate block just before (or after!) calling `-complete`
 - for the obvious reasons, only workers should call `-complete` on their futures unless both are designed to handle this; both clients and workers can both call `-cancel`, however
 - calls to `-cancel` and `-complete` are serialized; the first one dequeued wins
-- don’t rely on `-isCompleted` and `-isCancelled`; their return values are potentially obsolete before they’ve returned
+- don’t call `-isCompleted` and `-isCancelled` except within a block passed to `-performBlock:`; in any other context, their return values are potentially obsolete before they’ve returned
 
 
 #Thanks
