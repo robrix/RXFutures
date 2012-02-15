@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4892BD714EB4849003C1C21 /* RXFuture.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FCDC531482F1C000EB9EF7 /* RXFuture.m */; };
+		D4892BD914EB4849003C1C21 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FCDC2914819D4100EB9EF7 /* Cocoa.framework */; };
+		D4892BDB14EB4849003C1C21 /* RXFuture.h in Headers */ = {isa = PBXBuildFile; fileRef = D4FCDC521482F1C000EB9EF7 /* RXFuture.h */; };
 		D4FCDC2A14819D4100EB9EF7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FCDC2914819D4100EB9EF7 /* Cocoa.framework */; };
 		D4FCDC3C14819D4100EB9EF7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FCDC3B14819D4100EB9EF7 /* SenTestingKit.framework */; };
 		D4FCDC3D14819D4100EB9EF7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FCDC2914819D4100EB9EF7 /* Cocoa.framework */; };
-		D4FCDC4014819D4100EB9EF7 /* libRXFutures.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FCDC2614819D4100EB9EF7 /* libRXFutures.a */; };
+		D4FCDC4014819D4100EB9EF7 /* libRXFutures-MRR.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FCDC2614819D4100EB9EF7 /* libRXFutures-MRR.a */; };
 		D4FCDC4614819D4100EB9EF7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4FCDC4414819D4100EB9EF7 /* InfoPlist.strings */; };
 		D4FCDC541482F1C000EB9EF7 /* RXFuture.h in Headers */ = {isa = PBXBuildFile; fileRef = D4FCDC521482F1C000EB9EF7 /* RXFuture.h */; };
 		D4FCDC551482F1C000EB9EF7 /* RXFuture.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FCDC531482F1C000EB9EF7 /* RXFuture.m */; };
@@ -30,7 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D4FCDC2614819D4100EB9EF7 /* libRXFutures.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRXFutures.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4892BDF14EB4849003C1C21 /* libRXFutures copy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libRXFutures copy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4FCDC2614819D4100EB9EF7 /* libRXFutures-MRR.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libRXFutures-MRR.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4FCDC2914819D4100EB9EF7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D4FCDC2C14819D4100EB9EF7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		D4FCDC2D14819D4100EB9EF7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -50,6 +54,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D4892BD814EB4849003C1C21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4892BD914EB4849003C1C21 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4FCDC2314819D4100EB9EF7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -64,7 +76,7 @@
 			files = (
 				D4FCDC3C14819D4100EB9EF7 /* SenTestingKit.framework in Frameworks */,
 				D4FCDC3D14819D4100EB9EF7 /* Cocoa.framework in Frameworks */,
-				D4FCDC4014819D4100EB9EF7 /* libRXFutures.a in Frameworks */,
+				D4FCDC4014819D4100EB9EF7 /* libRXFutures-MRR.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,8 +97,9 @@
 		D4FCDC2714819D4100EB9EF7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D4FCDC2614819D4100EB9EF7 /* libRXFutures.a */,
+				D4FCDC2614819D4100EB9EF7 /* libRXFutures-MRR.a */,
 				D4FCDC3A14819D4100EB9EF7 /* RXFuturesTests.octest */,
+				D4892BDF14EB4849003C1C21 /* libRXFutures copy.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -185,6 +198,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		D4892BDA14EB4849003C1C21 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4892BDB14EB4849003C1C21 /* RXFuture.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4FCDC2414819D4100EB9EF7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -196,9 +217,26 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		D4FCDC2514819D4100EB9EF7 /* RXFutures */ = {
+		D4892BD514EB4849003C1C21 /* RXFutures-ARC */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D4FCDC4C14819D4100EB9EF7 /* Build configuration list for PBXNativeTarget "RXFutures" */;
+			buildConfigurationList = D4892BDC14EB4849003C1C21 /* Build configuration list for PBXNativeTarget "RXFutures-ARC" */;
+			buildPhases = (
+				D4892BD614EB4849003C1C21 /* Sources */,
+				D4892BD814EB4849003C1C21 /* Frameworks */,
+				D4892BDA14EB4849003C1C21 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RXFutures-ARC";
+			productName = RXFutures;
+			productReference = D4892BDF14EB4849003C1C21 /* libRXFutures copy.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D4FCDC2514819D4100EB9EF7 /* RXFutures-MRR */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4FCDC4C14819D4100EB9EF7 /* Build configuration list for PBXNativeTarget "RXFutures-MRR" */;
 			buildPhases = (
 				D4FCDC2214819D4100EB9EF7 /* Sources */,
 				D4FCDC2314819D4100EB9EF7 /* Frameworks */,
@@ -208,9 +246,9 @@
 			);
 			dependencies = (
 			);
-			name = RXFutures;
+			name = "RXFutures-MRR";
 			productName = RXFutures;
-			productReference = D4FCDC2614819D4100EB9EF7 /* libRXFutures.a */;
+			productReference = D4FCDC2614819D4100EB9EF7 /* libRXFutures-MRR.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		D4FCDC3914819D4100EB9EF7 /* RXFuturesTests */ = {
@@ -253,7 +291,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D4FCDC2514819D4100EB9EF7 /* RXFutures */,
+				D4FCDC2514819D4100EB9EF7 /* RXFutures-MRR */,
+				D4892BD514EB4849003C1C21 /* RXFutures-ARC */,
 				D4FCDC3914819D4100EB9EF7 /* RXFuturesTests */,
 			);
 		};
@@ -287,6 +326,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D4892BD614EB4849003C1C21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4892BD714EB4849003C1C21 /* RXFuture.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4FCDC2214819D4100EB9EF7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -310,7 +357,7 @@
 /* Begin PBXTargetDependency section */
 		D4FCDC3F14819D4100EB9EF7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D4FCDC2514819D4100EB9EF7 /* RXFutures */;
+			target = D4FCDC2514819D4100EB9EF7 /* RXFutures-MRR */;
 			targetProxy = D4FCDC3E14819D4100EB9EF7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -327,6 +374,32 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D4892BDD14EB4849003C1C21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_WARN_OBJCPP_ARC_ABI = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RXFutures/RXFutures-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "RXFutures copy";
+				VALID_ARCHS = x86_64;
+			};
+			name = Debug;
+		};
+		D4892BDE14EB4849003C1C21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_WARN_OBJCPP_ARC_ABI = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RXFutures/RXFutures-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "RXFutures copy";
+				VALID_ARCHS = x86_64;
+			};
+			name = Release;
+		};
 		D4FCDC4A14819D4100EB9EF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -421,6 +494,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D4892BDC14EB4849003C1C21 /* Build configuration list for PBXNativeTarget "RXFutures-ARC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4892BDD14EB4849003C1C21 /* Debug */,
+				D4892BDE14EB4849003C1C21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D4FCDC2014819D4100EB9EF7 /* Build configuration list for PBXProject "RXFutures" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -430,7 +512,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D4FCDC4C14819D4100EB9EF7 /* Build configuration list for PBXNativeTarget "RXFutures" */ = {
+		D4FCDC4C14819D4100EB9EF7 /* Build configuration list for PBXNativeTarget "RXFutures-MRR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D4FCDC4D14819D4100EB9EF7 /* Debug */,
