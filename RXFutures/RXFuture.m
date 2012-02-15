@@ -31,10 +31,12 @@
 }
 
 -(void)dealloc {
+	dispatch_release(queue);
+#if !__has_feature(objc_arc)
 	[completionHandlers release];
 	[cancellationHandlers release];
-	dispatch_release(queue);
 	[super dealloc];
+#endif
 }
 
 
