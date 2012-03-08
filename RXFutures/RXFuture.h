@@ -34,5 +34,6 @@
 @property (nonatomic, readonly, assign, getter=isCompleted) BOOL completed;
 
 -(void)cascadeCancellationToFuture:(RXFuture *)future; // cancels the argument when the receiver is cancelled
+-(void)passControlToFuture:(RXFuture *)future; // cancels the argument when the receiver is cancelled; cancels the receiver when the argument is cancelled; completes the receiver when the argument is completed
 
 @end

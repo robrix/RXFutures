@@ -122,4 +122,13 @@
 		[self onCancel:^{ [future cancel]; }];
 }
 
+-(void)passControlToFuture:(RXFuture *)future {
+	if (future)
+	{
+		[self onCancel:^{ [future cancel]; }];
+		[future onCancel:^{ [self cancel]; }];
+		[future onComplete:^{ [self complete]; }];
+	}
+}
+
 @end
