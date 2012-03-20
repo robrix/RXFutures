@@ -41,7 +41,7 @@
 
 
 -(void)dispatchCallback:(void(^)())block {
-	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block);
+	dispatch_async(queue, block);
 }
 
 
