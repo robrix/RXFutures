@@ -17,7 +17,11 @@
 
 
 +(RXFuture *)future {
+#if !__has_feature(objc_arc)
 	return [[self new] autorelease];
+#else
+	return [self new];
+#endif
 }
 
 
