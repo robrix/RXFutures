@@ -66,6 +66,12 @@
 			for(void (^block)() in cancellationHandlers) {
 				[self dispatchCallback:block];
 			}
+#if !__has_feature(objc_arc)
+			[completionHandlers release];
+			[cancellationHandlers release];
+#endif
+			completionHandlers = nil;
+			cancellationHandlers = nil;
 		}
 	}];
 }
@@ -93,6 +99,12 @@
 			for(void (^block)() in completionHandlers) {
 				[self dispatchCallback:block];
 			}
+#if !__has_feature(objc_arc)
+			[completionHandlers release];
+			[cancellationHandlers release];
+#endif
+			completionHandlers = nil;
+			cancellationHandlers = nil;
 		}
 	}];
 }
